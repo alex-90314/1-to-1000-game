@@ -1,23 +1,29 @@
-def roman_numeral(number:int) -> str:
+def roman_numeral(number:int) -> str: #convert numbers to roman numeral
   if number == 1:
-    return "I"
+    print("I")
   elif number == 2:
-    return "II"
+    print("II")
   elif number == 3:
-    return "III"
+    print("III")
   elif number == 4:
-    return "IV"
+    print("IV")
   elif number == 5:
-    return "V"
+    print("V")
   elif number == 6:
-    return "VI"
+    print("VI")
   elif number == 7:
-    return "VII"
+    print("VII")
   elif number == 8:
-    return "VIII"
+    print("VIII")
   elif number == 9:
-    return "IX"
+    print("IX")
   elif number == 10:
-    return "X"
+    print("X")
   else:
-    return "Number must be between 1 and 20"
+    print("Number must be between 1 and 20")
+  
+def blank_list(): #create a blank list 1-20
+  x = 1
+  for i in range(20):
+    print(f"{x}.")
+    x+=1
