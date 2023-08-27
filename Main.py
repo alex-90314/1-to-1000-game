@@ -28,4 +28,4 @@ for i in range(20):
     print(f"\nHere's your number: {number_gen}")
     numbers_gened.append(number_gen)
     placement = int(input("Where would you like to put it? "))
-    roman_numeral(placement)
+    print(roman_numeral[placement])
