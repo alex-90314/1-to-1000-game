@@ -1,9 +1,8 @@
-sampleDict = {
-  1: "I",
-  2: "II",
-  3: "III",
-  4: "IV",
+placed = {
+    "1": "",
+    "2": "500",
+    "3": "",
+    "4": ""
 }
-num = int(input(": "))
-roman_num = sampleDict[num]
-print(roman_num)
+
+print(placed)

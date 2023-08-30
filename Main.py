@@ -1,8 +1,9 @@
 import os
 import random as rand
 import time
+import pprint
 
-from Custom_functions import roman_numeral, blank_list
+from Custom_functions import placed, blank_list
 
 #clear the console and show the instructions
 os.system("cls")
@@ -18,7 +19,7 @@ next_game = input() #holds the player until they press enter so they have time t
 
 #clear the screen to start the game
 os.system("cls")
-    
+
 blank_list()
 
 numbers_gened = []
@@ -28,4 +29,5 @@ for i in range(20):
     print(f"\nHere's your number: {number_gen}")
     numbers_gened.append(number_gen)
     placement = int(input("Where would you like to put it? "))
-    print(roman_numeral[placement])
+    placed[placement] = number_gen
+    pprint.pprint(placed)
