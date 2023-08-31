@@ -1,9 +1,15 @@
 import os
 import random as rand
 import time
-import pprint
+from pprint import pformat, pprint
 
-from Custom_functions import clear, blank_list, placed
+from Custom_functions import blank_list, clear, placed
+
+
+#clear the screen to start the game
+def clear():
+    os.system("cls")
+    os.system("clear")
 
 #clear the console and show the instructions
 os.system("cls")
@@ -19,7 +25,6 @@ next_game = input() #holds the player until they press enter so they have time t
 
 clear() #clear the console to prepare to dislay the game
 
-numbers_gened = []
 blank_list()
 
 for i in range(20):
@@ -27,9 +32,12 @@ for i in range(20):
         clear() #clear the console to display a new list
     number_gen = rand.randint(1,1000)
     print(f"\nHere's your number: {number_gen}")
-    numbers_gened.append(number_gen)
     placement = int(input("Where would you like to put it? "))
     if placed[placement] != "":
         print("You Lost")
     placed[placement] = number_gen
-    pprint.pprint(placed)
+    placed_fix = pformat(placed)
+    chars_to_remove = ["{", "}", "'"]
+    for char in chars_to_remove:
+        placed_fix = placed_fix.replace(char, "")
+    print(placed_fix)

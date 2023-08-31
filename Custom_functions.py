@@ -23,13 +23,8 @@ placed = {
 }
 
 #create a blank list 1-20
-def blank_list(): 
+def blank_list():
   x = 1
   for i in range(20):
     print(f"{x}.")
     x+=1
-
-#clear the screen to start the game
-def clear():
-    os.system("cls")
-    os.system("clear")
