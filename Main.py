@@ -3,7 +3,7 @@ import random as rand
 import time
 from pprint import pformat, pprint
 
-from Custom_functions import blank_list, clear, placed
+from Custom_functions import blank_list
 
 
 #clear the screen to start the game
