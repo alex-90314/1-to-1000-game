@@ -23,12 +23,11 @@ placed = {
 }
 
 #create a blank list 1-20
-def blank_list():
+def blank_list() -> list:
+  '''
+  Creates a blank list by printing numbers 1-20 in the "#: " format.
+  '''
   x = 1
   for i in range(20):
     print(f"{x}.")
     x+=1
-
-if __name__=="__Main__":
-  for key, value in placed.items():
-    print(f"{key}: {value}\n")

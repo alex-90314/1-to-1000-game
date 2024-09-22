@@ -5,9 +5,11 @@ from pprint import pformat, pprint
 
 from Custom_functions import blank_list, placed
 
-
 #clear the screen to start the game
-def clear():
+def clear() -> None:
+    '''
+    Runs a try/except logic gate to make sure that the terminal/console is clear.
+    '''
     try:
         os.system("cls")
     except:
@@ -29,7 +31,10 @@ clear() #clear the console to prepare to dislay the game
 
 blank_list()
 
-def fixed_output(placed):
+def fixed_output(placed:dict) -> None:
+    '''
+    Outputs the placed dictionary in a beautified format using the pformat from the pretty print library. 
+    '''
     placed_fix = pformat(placed)
     chars_to_remove = ["{", "}", "'", ","]
     for char in chars_to_remove:
