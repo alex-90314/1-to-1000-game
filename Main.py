@@ -41,22 +41,23 @@ def fixed_output(placed:dict) -> None:
         placed_fix = placed_fix.replace(char, "")
     print(placed_fix)
 
-for i in range(len(placed)):
-    if i>0:
-        clear() #clear the console to display the new list
-        fixed_output(placed)
-    number_gen = rand.randint(0,1000)
-    print(f"\nHere's your number: {number_gen}")
-    placement = int(input("Where would you like to put it? ")) #take the user's placement input
-    if (placement<0 or placement>20): #give them a chance to try again
-        print("Too low/high\ntry again!\n")
-        print("\nPress Enter/Return to try again")
-        next_game = input()
-        os.system("python3 Main.py")
-    elif (placed[placement] != ""): #only losing condition
-        print("You Lost trying to overwrite an old number :(\ntry again!")
-        print("\nPress Enter/Return to try again")
-        next_game = input()
-        os.system("python3 Main.py")
+if __name__ == "__main__":
+    for i in range(len(placed)):
+        if i>0:
+            clear() #clear the console to display the new list
+            fixed_output(placed)
+        number_gen = rand.randint(0,1000)
+        print(f"\nHere's your number: {number_gen}")
+        placement = int(input("Where would you like to put it? ")) #take the user's placement input
+        if (placement<0 or placement>20): #give them a chance to try again
+            print("Too low/high\ntry again!\n")
+            print("\nPress Enter/Return to try again")
+            next_game = input()
+            os.system("python3 Main.py")
+        elif (placed[placement] != ""): #only losing condition
+            print("You Lost trying to overwrite an old number :(\ntry again!")
+            print("\nPress Enter/Return to try again")
+            next_game = input()
+            os.system("python3 Main.py")
 
-    placed[placement] = number_gen
+        placed[placement] = number_gen
