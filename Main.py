@@ -3,13 +3,15 @@ import random as rand
 import time
 from pprint import pformat, pprint
 
-from Custom_functions import blank_list
+from Custom_functions import blank_list, placed
 
 
 #clear the screen to start the game
 def clear():
-    os.system("cls")
-    os.system("clear")
+    try:
+        os.system("cls")
+    except:
+        os.system("clear")
 
 #clear the console and show the instructions
 os.system("cls")
@@ -27,17 +29,29 @@ clear() #clear the console to prepare to dislay the game
 
 blank_list()
 
-for i in range(20):
-    while i>0:
-        clear() #clear the console to display a new list
-    number_gen = rand.randint(1,1000)
-    print(f"\nHere's your number: {number_gen}")
-    placement = int(input("Where would you like to put it? "))
-    if placed[placement] != "":
-        print("You Lost")
-    placed[placement] = number_gen
+def fixed_output(placed):
     placed_fix = pformat(placed)
-    chars_to_remove = ["{", "}", "'"]
+    chars_to_remove = ["{", "}", "'", ","]
     for char in chars_to_remove:
         placed_fix = placed_fix.replace(char, "")
     print(placed_fix)
+
+for i in range(len(placed)):
+    if i>0:
+        clear() #clear the console to display the new list
+        fixed_output(placed)
+    number_gen = rand.randint(0,1000)
+    print(f"\nHere's your number: {number_gen}")
+    placement = int(input("Where would you like to put it? ")) #take the user's placement input
+    if (placement<0 or placement>20): #give them a chance to try again
+        print("Too low/high\ntry again!\n")
+        print("\nPress Enter/Return to try again")
+        next_game = input()
+        os.system("python3 Main.py")
+    elif (placed[placement] != ""): #only losing condition
+        print("You Lost trying to overwrite an old number :(\ntry again!")
+        print("\nPress Enter/Return to try again")
+        next_game = input()
+        os.system("python3 Main.py")
+
+    placed[placement] = number_gen

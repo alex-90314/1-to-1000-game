@@ -1,3 +1,3 @@
-desktop game based on the TikTok filter.
+desktop game based on the TikTok filter game.
 
-currently played in the console
+*currently played in the console

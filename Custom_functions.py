@@ -28,3 +28,7 @@ def blank_list():
   for i in range(20):
     print(f"{x}.")
     x+=1
+
+if __name__=="__Main__":
+  for key, value in placed.items():
+    print(f"{key}: {value}\n")
